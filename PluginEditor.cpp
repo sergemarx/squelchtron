@@ -210,7 +210,7 @@ void SqueltronEditor::paint (juce::Graphics& g)
     g.drawText ("GUITAR  >  SQUAWK SYNTH  >  FUZZ    //    MK II", plate.withTop (plate.getBottom() - 20.f).toNearestInt(), Justification::centred);
 
     // labels + CC tags
-    const bool blink = (Time::getMillis() / 280) % 2 == 0;
+    const bool blink = (Time::getMillisecondCounter() / 280) % 2 == 0;
     for (int i = 0; i < SqueltronProcessor::numParams; ++i)
     {
         const auto kb = knobs[(size_t) i].getBounds();
